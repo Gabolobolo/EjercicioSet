@@ -1,0 +1,21 @@
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Agencia {
+    private Set<Paquete> paquetes;
+
+    public Agencia() {
+        paquetes = new LinkedHashSet();
+    }
+    public boolean agregar(Paquete p){
+        return paquetes.add(p);
+    }
+
+    public String listar(){
+        StringBuilder sb = new StringBuilder();
+        for (Paquete p : paquetes){
+            sb.append(p.toString()+"\n");
+        }
+        return sb.toString();
+    }
+}
