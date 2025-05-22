@@ -1,0 +1,47 @@
+public class Paquete {
+    private int idTrack;
+    private String receptor;
+
+    public Paquete(int idTrack, String receptor) {
+        this.idTrack = idTrack;
+        this.receptor = receptor;
+    }
+
+    public int getIdTrack() {
+        return idTrack;
+    }
+
+    public void setIdTrack(int idTrack) {
+        this.idTrack = idTrack;
+    }
+
+    public String getReceptor() {
+        return receptor;
+    }
+
+    public void setReceptor(String receptor) {
+        this.receptor = receptor;
+    }
+
+    @Override
+    public String toString() {
+        return "Paquete{" +
+                "idTrack: " + idTrack +
+                ", receptor: " + receptor;
+    }
+
+    @Override
+    public int hashCode() {
+        int resultado = receptor.toUpperCase().hashCode();
+        resultado+= idTrack;
+        return resultado;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this==obj) return true;
+        if(obj== null || getClass()!=obj.getClass()) return false;
+        Paquete p1 = (Paquete) obj;
+        return idTrack==p1.idTrack && receptor.toUpperCase().equals(p1.receptor.toUpperCase());
+    }
+}
